@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    .item-list {
+      background: ghostwhite;
+      position: fixed;
+      width: 400px;
+      display: grid;
+      grid-template-rows: 70px 1fr 70px;
+      inset: 0 -400px 0 auto;
+      transition: 0.3s ease;
+      color:white;
+      overflow:auto;
+      text-align: center;
+    }
+    .item-list .item {
+      display: grid;
+      grid-template-columns: 140px 120px 70px 1fr;
+      border: 1px solid black;
+      border-radius: 10px;
+      height: 80px;
+      padding:20px;
+      align-items:center;
+      background: #00ce56;
+      color: white;
+      margin:5px;
+      
+       
+    }
+    .item-list .item img {
+      width: 50px;
+      height: 50px;
+      border-radius:10px;
+      border:solid black 1px;
+    }
+    .item-list .item-btn-sec {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .item-list .item-btn-sec button {
+      width: 30px;
+      height: 30px;
+      font-weight: bolder;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }.item-list-with-scroll{
+    scrollbar-width:0;
+      
+    }
+    body.showcart .item-list {
+      inset: 0 0 0 auto;
+      transform: translateX(0);
+    }
+    .cartbtn {
+      display: flex;
+      background: rgba(43, 51, 86, 0.73);
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .cartbtn button {
+      border-radius: 10px;
+      width: 130px;
+      border: none;
+      color: white;
+      background: #00ce56;
+      font-weight: bolder;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo-section">
+      <a href="index.html">
+        <img src="shared image.png" alt="JJ Mart Logo" class="logo" height="80">
+      </a>
+      <h1 style="color: white;"><span style="color: #0A8326;">JJ</span> Mart</h1>
+    </div>
+    <div class="button-section">
+      <a href="#"><i class="fa-solid fa-user"></i></a>
+      <a href="#" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <div class="notification">1</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="instant.html">Foods</a></li>
+      <li><a href="snacks.html">Snacks</a></li>
+      <li><a href="condiments.html">Condiments</a></li>
+      <li><a href="beverages.html">Beverages</a></li>
+      <li><a href="supplies.html">Supplies</a></li>
+    </ul>
+  </nav>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h4>WELCOME TO</h4>
+    <h1 class="sname"><span>JJ</span> Mart</h1>
+    <h6>Your Friendly Neighborhood Mini Mart</h6>
+    <div class="str">
+      <img src="shared image.png" width="600" height="320" alt="Store Image">
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <h1 align="center">Featured Products</h1>
+  <div class="products">
+    <!-- Product 1 -->
+    <div class="product">
+      <h2>Vinegar</h2>
+      <img src="./condiments/vinegar.jpg" alt="Vinegar" width="90" height="100">
+      <div class="product-info">
+        <button class="buy-btn">Buy</button>
+        <span class="price">₱55</span>
+      </div>
+    </div>
+    <!-- Product 2 -->
+    <div class="product">
+      <h2>Egg</h2>
+      <img src="./Products/egg.jpg" alt="Egg" width="90" height="100">
+      <div class="product-info">
+        <button class="buy-btn">Buy</button>
+        <span class="price">₱10</span>
+      </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="product">
+      <h2>Cream-o</h2>
+      <img src="./snacks/creamo.jpg" alt="Cream-o" width="90" height="100">
+      <div class="product-info">
+        <button class="buy-btn">Buy</button>
+        <span class="price">₱10</span>
+      </div>
+    </div>
+    <!-- Product 4 -->
+    <div class="product">
+      <h2>Spicy Paksiw</h2>
+      <img src="./Products/spicypksiw.jpg" alt="Spicy Paksiw" width="90" height="100">
+      <div class="product-info">
+        <button class="buy-btn">Buy</button>
+        <span class="price">₱28</span>
+      </div>
+    </div>
+    <!-- Product 5 -->
+    <div class="product">
+      <h2>Downy</h2>
+      <img src="./supplies/downy.jpg" alt="Downy" width="90" height="100">
+      <div class="product-info">
+        <button class="buy-btn">Buy</button>
+        <span class="price">₱10</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART / ITEM LIST -->
+  <section class="item-list">
+    <div class="cartbtn">
+    <h2>Products</h2>
+    </div>
+    <div class="item">
+      <img src="./snacks/creamo.jpg" alt="Crispy fry">
+      <h4>Cream-O</h4>
+      <div class="item-btn-sec">
+        
+        <button>&lt;</button>
+        <span>0</span>
+        <button>&gt;</button>
+      </div>
+    </div>
+    <div class="cartbtn">
+      <button class="close">Close</button>
+      <button>Check-out</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="about">
+      <h3>About</h3>
+      <p>
+        The store, JJ Mart, was established on September 12, 2023. It started as a 
+        small and humble business located along a narrow street near a main road. 
+        The client chose this type of store because it was manageable and affordable 
+        with the limited capital available at that time.
+      </p>
+    </div>
+<h3>Contact</h3>
+    <div class="contact">
+      
+      <div class="info">
+        <i class="fa-solid fa-phone"></i> Contact Number:<br>0908 328 0109</div>
+      <div class="info"><i class="fa-brands fa-facebook"></i> Facebook:<br>Rowena Rivera Jaime</div>
+      <div class="info"><i class="fa-solid fa-location-dot"></i> Location:<br>IDK</div>
+    </div>
+
+    <section class="owner-info">
+      <h3>Owner</h3>
+      <h4>Owned by Rowena Rivera Jaime</h4>
+    </section>
+  </footer>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>
